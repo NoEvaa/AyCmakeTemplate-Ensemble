@@ -1,4 +1,5 @@
-#include "aytiny/ay_add.h"
+#include "ay_core/ay_core.h"
+#include "ay_pvt/ay_pvt.h"
 
 int iin::ayAdd(int l, int r)
 {
