@@ -1,4 +1,4 @@
-# C++ Cmake Template: Tiny
+# C++ Cmake Template: Ensemble
 
 A cmake template for multiple C++ libraries.
 

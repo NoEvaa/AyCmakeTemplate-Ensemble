@@ -22,9 +22,6 @@ include(cmake/Utils.cmake)
 # Init cmake environment
 include(cmake/Init.cmake)
 
-# Third party
-#add_subdirectory(third_party)
-
 # ==================================================
 # Module libraries
 add_subdirectory(src)
