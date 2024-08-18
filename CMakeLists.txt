@@ -9,10 +9,6 @@ project(
     LANGUAGES CXX
 )
 
-# Module: namespace::name
-set(MODULE_NAME ayense)
-set(MODULE_NS ayin)
-
 # ==================================================
 
 # Project options

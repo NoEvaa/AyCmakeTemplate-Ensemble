@@ -2,6 +2,7 @@
 #include <cassert>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 namespace iin {
 template <typename T>
@@ -18,7 +19,7 @@ struct AyMatrixPvtData
     void init(const value_type& v)
     {
         std::size_t s = row_ * col_;
-    data_.reserve(s);
+        data_.reserve(s);
         data_.resize(s, v);
     }
 
@@ -39,4 +40,6 @@ struct AyMatrixPvtData
         return data_[i * col_ + j];
     }
 };
+
+std::string ayMatrixName();
 }

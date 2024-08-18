@@ -1,6 +1,7 @@
 #pragma once
 #include <ayutils/ay_new.hpp>
 #include <ayutils/ay_fmt.hpp>
+#include <vector>
 
 #if defined(__GNUC__)
     #define AY_CORE_API __attribute__((visibility("default")))
@@ -20,6 +21,14 @@ class AY_CORE_API AyIntMatrix
 public:
     int rowSize() const;
     int colSize() const;
+
+    void reshape(int row, int col, int v = 0);
+    
+    void fillAll(int v = 0);
+    void fillDiag(int v = 1);
+    void fillVect(const std::vector<int>&);
+    
+    operator bool() const;
     
     int& operator()(int row, int col);
     int operator()(int row, int col) const;
@@ -28,13 +37,14 @@ private:
     shared_ptr<AyMatrixPvtData<int>> _p_data;
 };
 
-template<>
+AY_CORE_API string _ayToStr(const AyIntMatrix&);
+
+template <>
 struct AyFmt<AyIntMatrix>
 {
     string toStr(const AyIntMatrix& mx)
     {
-        
-        return string();
+        return _ayToStr(mx);
     }
 };
 }
