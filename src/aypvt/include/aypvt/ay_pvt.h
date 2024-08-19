@@ -1,4 +1,5 @@
 #pragma once
+#include <aypvt/export.h>
 #include <cassert>
 #include <vector>
 #include <algorithm>
@@ -41,5 +42,5 @@ struct AyMatrixPvtData
     }
 };
 
-std::string ayMatrixName();
+AYPVT_EXPORT std::string ayMatrixName();
 }

@@ -23,7 +23,7 @@ string iin::_ayToStr(const AyIntMatrix& mx)
     {
         if (r != 0)
         {
-            ss << " ";
+            ss << "\n ";
         }
         ss << "[";
         for(int c = 0; c < mx.colSize(); ++c)
@@ -31,7 +31,7 @@ string iin::_ayToStr(const AyIntMatrix& mx)
             ss << " ";
             ss << mx(r, c);
         }
-        ss << "]\n";
+        ss << "]";
     }
     ss << "]";
     return ss.str();

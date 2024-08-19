@@ -11,6 +11,8 @@ project(
 
 # ==================================================
 
+include(GenerateExportHeader)
+
 # Project options
 include(cmake/Options.cmake)
 # Utils 

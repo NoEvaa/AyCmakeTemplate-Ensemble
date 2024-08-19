@@ -11,6 +11,8 @@ project(
 set(MODULE_NAME aypvt)
 set(MODULE_NS ayin)
 
+string(TOUPPER "${MODULE_NAME}" MODULE_NAME_UPPER)
+
 # ==================================================
 # Module library
 
@@ -36,9 +38,19 @@ add_library(
     ${${MODULE_NAME}_SOURCES}
 )
 
+target_compile_definitions(${MODULE_NAME} PUBLIC ${MODULE_NAME_UPPER}_STATIC_DEFINE)
+
+generate_export_header(
+    ${MODULE_NAME}
+    BASE_NAME ${MODULE_NAME}
+    EXPORT_FILE_NAME "${CMAKE_BINARY_DIR}/ext_include/${MODULE_NAME}/export.h"
+    STATIC_DEFINE "${MODULE_NAME_UPPER}_STATIC_DEFINE"
+)
+
 target_include_directories(
     ${MODULE_NAME}
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+    PUBLIC ${CMAKE_BINARY_DIR}/ext_include
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
